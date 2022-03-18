@@ -1,12 +1,24 @@
 {
-    "products" : [
-        {
-            "name": "products A",
-            "age" : 20
-        },
-        {
-            "name": "products B",
-            "age" : 22
-        }
-    ]
+  "products": [
+    {
+      "name": "vũ minh hoàng",
+      "price": "1231231",
+      "id": 1
+    },
+    {
+      "name": "vũ minh hoàng",
+      "price": "1231231",
+      "id": 2
+    },
+    {
+      "name": "vũ minh hoàngaa",
+      "price": "1231231",
+      "id": 3
+    },
+    {
+      "name": "vũ minh hoàngaaswe",
+      "price": "1231231",
+      "id": 4
+    }
+  ]
 }
