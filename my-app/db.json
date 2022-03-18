@@ -1,0 +1,12 @@
+{
+    "products" : [
+        {
+            "name": "products A",
+            "age" : 20
+        },
+        {
+            "name": "products B",
+            "age" : 22
+        }
+    ]
+}
