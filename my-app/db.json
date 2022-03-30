@@ -1,14 +1,24 @@
 {
   "products": [
     {
-      "name": "vũ minh hoàng",
-      "price": "1231231",
-      "id": 2
+      "name": "Hoàng A",
+      "price": "10000000111",
+      "id": 4
     },
     {
-      "name": "vũ minh hoàngaa",
-      "price": "1231231",
-      "id": 3
+      "name": "Product A",
+      "price": "7111111111",
+      "id": 5
+    },
+    {
+      "name": "Product B",
+      "price": "100000000000000",
+      "id": 6
+    },
+    {
+      "name": "Product C",
+      "price": "10000000001",
+      "id": 7
     }
   ]
 }

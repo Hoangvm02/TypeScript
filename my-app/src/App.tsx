@@ -4,7 +4,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import ShowInfo from "./components/Showinfo";
 import type { ProductType } from "./types/product";
-import { add, list, remove } from "./api/product";
+import { add, list, remove, update } from "./api/product";
 import { Navigate, NavLink, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
@@ -16,6 +16,9 @@ import AdminLayout from "./pages/layouts/AdminLayout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProductAdd from "./pages/ProductAdd";
 import ProductEdit from "./pages/ProductEdit";
+import PivateRoute from "./components/PrivateRoute"
+import Signup from "./pages/Signup";
+import Signin from "./pages/Signin"
 function App() {
   const [products, setProducts] = useState<ProductType[]>([]); // 1
   // const [count, setCount] = useState<number>(0);
@@ -40,18 +43,20 @@ function App() {
     const { data} = await add(product);
     setProducts([...products, data])
   }
-  const onHandleUpdate = async (product: ProductType) => {
+  const onHandleUpdate = async (product:ProductType) => {
     console.log(product);
-    const { data } = await update(product);
-    setProducts(products.map(item => item.id == data.id ? data: item))
-  }
+   const { data } = await update(product)
+   setProducts(products.map(item => item.id == data.id ? data : item));
+}
   return (
     <Routes>
       <Route path="/" element={<WebsiteLayout />}>
         <Route index element={<Home />} />
         <Route path="product" element={<Product />} />
+        <Route path="signup" element={<Signup/>}/>
+        <Route path="signin" element={<Signin />}/>
       </Route>
-      <Route path="admin" element={<AdminLayout />}>
+      <Route path="admin" element={<PivateRoute><AdminLayout /></PivateRoute>}>
         <Route index element={<Navigate to="dashboard" />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="product">

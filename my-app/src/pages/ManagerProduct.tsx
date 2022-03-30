@@ -12,10 +12,13 @@ const ManagerProduct = (props: ManagerProductProps) => {
     <div className="container">
         <table className="table table-bordered">
             <thead>
+              <a href="/admin/product/add">Add</a>
                 <tr>
-                    <th>#</th>
+                    <th>STT</th>
                     <th>Name</th>
-                    <th></th>
+                    <th>Price</th>
+                    <th>Edit</th>
+                    <th>Xóa</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,8 +26,9 @@ const ManagerProduct = (props: ManagerProductProps) => {
                 return <tr key={index}>
                         <td>{index + 1}</td>
                         <td>{item.name}</td>
+                        <td>{item.price}</td>
+                        <td> <Link to={`/admin/product/${item.id}/edit`}>Edit</Link></td>
                         <td>
-                        <Link to={`/admin/product/${item.id}/edit`}>Edit</Link>
                           <button onClick={() => props.onRemove(item.id)}>Remove</button>
                         </td>
                     </tr>

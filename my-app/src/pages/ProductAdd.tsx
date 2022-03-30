@@ -18,9 +18,11 @@ const ProductAdd = (props: ProductAddProps) => {
   return (
     <div>
         <form onSubmit={handleSubmit(onSubmit)}>
+            <span>Name:</span><br />
             <input type="text" {...register('name', { required: true, minLength: 5})}/> <br />
             {errors.name && errors.name.type === "required" && <span>Required</span>} <br />
             {errors.name && errors.name.type === "minLength" && <span>Min length</span>} 
+            <span>Price:</span><br />
             <input type="number" {...register('price')}/> <br />
             <button>Add</button>
         </form>

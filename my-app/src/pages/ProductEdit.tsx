@@ -4,7 +4,6 @@ import { useNavigate, useParams } from 'react-router-dom'
 import {read} from '../api/product'
 import {ProductType} from '../types/product'
 
-
 type ProductEditProps = {
     onUpdate: (product: ProductType) => void
 }

@@ -2,13 +2,14 @@ import React from 'react'
 import type { ProductType } from '../types/product'
 
 type ShowInfoProps  = {
-  info: ProductType
+  name: string,
+  children: string
 }
 
 const ShowInfo = (props: ShowInfoProps) => {
   return (
     <div>
-      { props.info.name}
+    Hello...{props.children}
     </div>
   )
 }
