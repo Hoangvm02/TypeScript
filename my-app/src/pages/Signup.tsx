@@ -10,9 +10,11 @@ type FormValues = {
 const Signup = () => {
     const { register, handleSubmit, formState: { errors}} = useForm<FormValues>();
     const navigate = useNavigate();
-    const onSubmit: SubmitHandler<FormValues> = (data) => {
+    const onSubmit: SubmitHandler<FormValues> =  (data) => {
         signup(data);
-        navigate("/sigin");
+      //  console.log(data);
+       
+        navigate("/signin");
     }
   return (
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -39,9 +41,7 @@ const Signup = () => {
             </label>
             <div className="relative flex items-center justify-center">
               <input id="pass" type="password" {...register('password')} className="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
-              <div className="absolute right-0 mt-2 mr-3 cursor-pointer">
-                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg" alt="viewport" />                                    
-              </div>
+              
             </div>
           </div>
           <div className="mt-8">

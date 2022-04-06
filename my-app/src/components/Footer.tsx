@@ -3,6 +3,7 @@ import Menu from './Menu'
 type Props = {}
 
 const Footer = (props: Props) => {
+
   return (
 
    <div className="mx-auto container xl:px-20 lg:px-12 sm:px-6 px-4 px-4 py-12">

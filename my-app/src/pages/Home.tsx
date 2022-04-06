@@ -1,10 +1,14 @@
 import React from 'react'
+import ListProduct from '../components/ListProduct';
+import { ProductType } from '../types/product'
 
-type Props = {}
+type Props = {
+  data: ProductType[];
+}
 
 const Home = (props: Props) => {
   return (
-    <div>Home</div>
+    < ListProduct data= {props.data} />
   )
 }
 
