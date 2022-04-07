@@ -19,6 +19,13 @@ const Header = () => {
       <div>
         <a className="text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700" href="/"> Luxiwood</a>
       </div>
+      <div className="flex flex-col-5 md:flex-row md:mx-8">
+      <a className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/">Home</a>
+        <a className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="product">Sản Phẩm</a>
+        <a className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="blog">Tin Tức</a>
+        <a className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/admin">Admin</a>
+        <a className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="contact">Liên Hệ</a>
+      </div>
       <div className="flex md:hidden">
         <button type="button" className="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="toggle menu">
           <svg viewBox="0 0 24 24" className="h-6 w-6 fill-current">
@@ -30,16 +37,14 @@ const Header = () => {
     
     <div className="md:flex items-center">
       <div className="flex flex-col-5 md:flex-row md:mx-8">
-        <a className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/">Home</a>
-        <a className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="product">Sản Phẩm</a>
-        <a className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="blog">Tin Tức</a>
-        <a className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="/admin">Admin</a>
-        <a className="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0" href="contact">Liên Hệ</a>
+       
         <div className="hidden sm:flex flex-row space-x-2">
           {a == null ? (<div> 
           <a href="/signup" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign Up</a>
           <a href="/signin" className="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 py-2 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Sign In</a></div>)
-           : ( <button className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-1 py-2 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"onClick={(e) => handleClick(e, "clicked")}>Đăng xuất</button>)}
+           : ( <div>
+           <button className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-1 py-2 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"onClick={(e) => handleClick(e, "clicked")}>Đăng xuất</button>
+           </div>)}
          
         </div>
       </div>
