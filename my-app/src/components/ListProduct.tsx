@@ -17,9 +17,12 @@ const ListProduct = (props: Props) => {
       return (
       <div className="relative">
       <img className="w-full h-80" src={item.image} alt="A girl wearing dark blue suit and posing" />
+     <div className="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+        <button className="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
+          <a href="/products/${product.id}"><button className="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">Quick View</button></a>
+      </div>
         <p className=" text-xl leading-5 hover: text-black-900 md:mt-6 mt-4">{item.name}</p>
         <p className="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">{item.price}</p>
-        <p className="font-normal dark:text-gray-300 text-base leading-4 text-gray-600 mt-4">{item.desc}</p>
       </div>
       )
     })}
