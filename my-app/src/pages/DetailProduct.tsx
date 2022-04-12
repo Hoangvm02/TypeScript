@@ -2,28 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import { read } from '../api/product';
 import { ProductType } from '../types/product';
-type Props = {
-    data: ProductType[];
-}
 
-
-const DetailProduct = (props: Props) => {
+const DetailProduct = () => {
   const { id } = useParams();
-    // const { register, handleSubmit, formState: { errors }, reset } = useForm<FormInputs>();
-    const navigate = useNavigate();
-    console.log(id);
-    
-    const [products, setProducts] = useState<ProductType[]>([]);
-    useEffect(() => {
-        const getProduct = async () => {
-            const { data } = await read(id);
-            setProducts(data)
-            console.log(data);
-            
-        }
-        getProduct();
-    }, []);
-    console.log(products);
+  const [products, setProducts] = useState<ProductType[]>([]);
+  useEffect(() => {
+    const getProduct = async () => {
+      const { data } = await read(id);
+      setProducts(data);
+    }
+    getProduct();
+  }, []);
+  // console.log(products);
+  console.log(id);
+  console.log(products);
 
 
     

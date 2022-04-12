@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { ProductType } from '../types/product'
 
 type Props = {
@@ -104,7 +105,7 @@ const Product = (props: Props) => {
       <div className="relative">
         <div className="absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50"><p className="text-xs leading-3 text-gray-800">New</p></div>
         <img className="w-100 h-50" src={item.image} alt="A girl wearing dark blue suit and posing" />
-        <p className="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">{item.name}</p>
+        <Link to={`/products/${item._id}`}> <p className=" text-xl leading-5 hover: text-black-900 md:mt-6 mt-4">{item.name}</p></Link>
         <p className="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">{item.price}</p>
       </div>
       )
