@@ -28,7 +28,7 @@ import ManagerCategory from "./pages/category/ManagerCategory";
 import CategoryAdd from "./pages/category/CategoryAdd";
 import CategoryEdit from "./pages/category/CategoryEdit";
 import { addC, deleteCategory, listCategory, updateC } from "./api/category";
-import Cart from "./pages/cart";
+import DetailProduct from "./pages/DetailProduct";
 function App() {
   const [products, setProducts] = useState<ProductType[]>([]); // 1
   // const [count, setCount] = useState<number>(0);
@@ -89,9 +89,9 @@ const onHandleUpdateC = async (category:CategoryType) => {
       <Route path="/" element={<WebsiteLayout />}>
         <Route index element={<Home data={products}/>} />
         <Route path="product" element={<Product data={products} />} />
+        <Route path="products/:id" element={<DetailProduct />} />
         <Route path="contact" element={<Contact />} />
         <Route path="blog" element={<Blog />} />
-        <Route path="cart" element={<Cart />} />
         <Route path="signup" element={<Signup/>}/>
         <Route path="signin" element={<Signin />}/>
       </Route>
