@@ -46,7 +46,7 @@ const Product = (props: Props) => {
       </div>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 flex items-baseline justify-between pt-24 pb-6 border-b border-gray-200">
-          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900">New Arrivals</h1>
+          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900">Lọc</h1>
           <div className="flex items-center">
             <div className="relative inline-block text-left">
               <div>
@@ -75,26 +75,17 @@ const Product = (props: Props) => {
           </div>
         </div>
         <section aria-labelledby="products-heading" className="pt-6 pb-24">
-          <h2 id="products-heading" className="sr-only">Products</h2>
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-8 gap-y-10">
             <form className="hidden lg:block">
               <h3 className="sr-only">Categories</h3>
               <ul role="list" className="text-sm font-medium text-gray-900 space-y-4 pb-6 border-b border-gray-200">
                 <li>
-                  <a href="#"> Totes </a>
+                  <a href="#"> Lọc từ A - Z </a>
                 </li>
                 <li>
-                  <a href="#"> Backpacks </a>
+                  <a href="#"> Lọc từ Z - A </a>
                 </li>
-                <li>
-                  <a href="#"> Travel Bags </a>
-                </li>
-                <li>
-                  <a href="#"> Hip Bags </a>
-                </li>
-                <li>
-                  <a href="#"> Laptop Sleeves </a>
-                </li>
+                
               </ul>
             </form>
             <div className="lg:col-span-3">
@@ -104,7 +95,7 @@ const Product = (props: Props) => {
       return (
       <div className="relative">
         <div className="absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50"><p className="text-xs leading-3 text-gray-800">New</p></div>
-        <img className="w-100 h-50" src={item.image} alt="A girl wearing dark blue suit and posing" />
+        <img className="w-80 h-50" src={item.image} alt="A girl wearing dark blue suit and posing" />
         <Link to={`/products/${item._id}`}> <p className=" text-xl leading-5 hover: text-black-900 md:mt-6 mt-4">{item.name}</p></Link>
         <p className="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">{item.price}</p>
       </div>

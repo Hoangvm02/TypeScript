@@ -17,7 +17,7 @@ const ListProduct = (props: Props) => {
     {props.data && props.data.map((item, index) => {
       return (
       <div className="relative">
-      <img className="w-full h-80" src={item.image} alt="A girl wearing dark blue suit and posing" />
+      <img className="w-full h-60" src={item.image} alt="A girl wearing dark blue suit and posing" />
      <div className="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
         <button className="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add to bag</button>
       </div>

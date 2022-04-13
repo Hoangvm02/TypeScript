@@ -26,23 +26,25 @@ const Signup = () => {
               Name
             </label>
             <input aria-labelledby="name" type="text" {...register('name', { required: true, minLength: 5})} className="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
-            {errors.name && errors.name.type === "required" && <span>Required</span>}
-            {errors.name && errors.name.type === "minLength" && <span>Min length</span>}
+            {errors.name && errors.name.type === "required" && <span className="text-red-600">Không được bỏ trống</span>}
+            {errors.name && errors.name.type === "minLength" && <span className="text-red-600">Tên không được ít hơn 5</span>}
           </div>
           <div>
             <label id="email" className="text-sm font-medium leading-none text-gray-800">
               Email
             </label>
             <input aria-labelledby="email" type="email" {...register('email', { required: true})} className="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+            {errors.email && errors.email.type === "required" && <span className="text-red-600">Không được bỏ trống</span>}
           </div>
           <div className="mt-6  w-full">
             <label htmlFor="pass"  className="text-sm font-medium leading-none text-gray-800">
               Password
             </label>
             <div className="relative flex items-center justify-center">
-              <input id="pass" type="password" {...register('password')} className="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
-              
+              <input id="pass" type="password" {...register('password',{ required: true})} className="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+             
             </div>
+            {errors.password && errors.password.type === "required" && <span className="text-red-600">Không được bỏ trống</span>}
           </div>
           <div className="mt-8">
             <button role="button" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">ĐĂNG KÝ</button>
