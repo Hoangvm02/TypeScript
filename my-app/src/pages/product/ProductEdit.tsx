@@ -77,16 +77,20 @@ const ProductEdit = (props: ProductEditProps) => {
             <div className="grid grid-cols-6 gap-6">
               <div className="col-span-6 sm:col-span-3">
                 <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">Name</label>
-                <input  type="text" {...register('name')} className="mt-3 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                <input  type="text" {...register('name',{ required: true, minLength: 5 })} className="mt-3 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                {errors.name && errors.name.type === "required" && <span className="text-red-600">Không được bỏ trống</span>} <br />
+                {errors.name && errors.name.type === "minLength" && <span className="text-red-600">Ký tự phải lớn hơn 5</span>}
               </div>
               
               <div className="col-span-6 sm:col-span-3">
                 <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">PRICE</label>
-                <input type="number"  {...register('price')}  autoComplete="email" className="mt-3 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                <input type="number"  {...register('price', { required: true})}  autoComplete="email" className="mt-3 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                {errors.price && errors.price.type === "required" && <span className="text-red-600">Không được bỏ trống</span>}
               </div>
               <div className="col-span-6 sm:col-span-3">
                 <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">Desc</label>
-                <input  type="text" {...register('desc')} className="mt-3 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                <input  type="text" {...register('desc', { required: true})} className="mt-3 appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" />
+                {errors.desc && errors.desc.type === "required" && <span className="text-red-600">Không được bỏ trống</span>}
               </div>
               <div className="col-span-6">
                 <div>

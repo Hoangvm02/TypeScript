@@ -30,13 +30,18 @@ const Signin = () => {
     <form className="mt-8 space-y-6" id="formSignin" onSubmit={handleSubmit(onSubmit)}>
       <div className="rounded-md shadow-sm -space-y-px">
         <div>
-          <label htmlFor="email-address" className="sr-only">Nhập Email</label>
+          <label id="email" className="text-sm font-medium leading-none text-gray-800">
+                Email
+          </label>
           <input id="email"  type="email" {...register('email', { required: true})} autoComplete="email" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nhập Email" />
+          {errors.email && errors.email.type === "required" && <span className="text-red-600">Không được bỏ trống</span>}
         </div>
-        <div>
-          <label htmlFor="password" className="sr-only">Nhập Mật Khẩu</label>
-          <input id="password"
-           type="password" {...register('password')} autoComplete="current-password" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nhập mật khẩu" />
+        <div className="mt-6  w-full">
+            <label htmlFor="pass"  className="text-sm font-medium leading-none text-gray-800">
+                  Password
+                </label>
+              <input id="password"
+              type="password" {...register('password')} autoComplete="current-password" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nhập mật khẩu" />
         </div>
       </div>
       <div className="flex items-center justify-between">
